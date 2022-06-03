@@ -14,14 +14,14 @@ app.use(express.static("public"));
 
 // app.use(routes);
 
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
 io.sockets.on("connection", function (socket) {
   socket.on("username", function (username) {
     socket.username = username;
-    io.emit("is_online", "🔵 <i>" + socket.username + " joined the chat..</i>");
+    io.emit("is_online", "🔵 <i>" + socket.username + " join the chat..</i>");
   });
 
   socket.on("disconnect", function (username) {
@@ -36,11 +36,9 @@ io.sockets.on("connection", function (socket) {
   });
 });
 
-// const server = http.listen(3001, function () {
-//   console.log("listening on *:3001");
-// });
-sequelize.sync({ force: false }).then(() => {
-  http.listen(PORT, () => {
-    console.log(`App listening on http://localhost:${PORT}`);
-  });
+// sync sequelize models to the database, then turn on the server
+// sequelize.sync({ force: false }).then(() => {
+app.listen(PORT, () => {
+  console.log(`App listening on http://localhost:${PORT}`);
 });
+// });

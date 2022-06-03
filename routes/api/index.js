@@ -3,7 +3,7 @@ const logs = require("./logs");
 const users = require("./users");
 
 //Setup endpoints
-router.use("/categories", categoryRoutes);
-router.use("/products", productRoutes);
+router.use("/logs", logs);
+router.use("/users", users);
 
 module.exports = router;
