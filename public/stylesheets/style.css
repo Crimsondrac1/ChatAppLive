@@ -17,7 +17,7 @@ html {
 }
 
 .columns-two {
-    height: 100vh;
+    min-height: 80vh;
 }
 
 .color-one {
@@ -43,27 +43,30 @@ form {
     margin: 0;
     padding: 0; 
 }
-li {
-    display: flex;
-    overflow-x: auto;
+section.li {
+    display: list-item;
 }
 
-
+div.ul {
+    display: flex;
+    overflow-y: scroll;
+    height: 100%;
+    
+}
+ul::-webkit-scrollbar {
+    display: none;
+}
 
 li:nth-child(odd) {
     background: var(--green1);
-    width: 50%;
     display: flex;
     flex: left;
 }
 
 li:nth-child(even) {
     background: var(--blue1);
-    width: 50%;
     display: flex;
     float: right;
+    justify-content: right;
 }
 
-img {
-    width: 50%;
-}
