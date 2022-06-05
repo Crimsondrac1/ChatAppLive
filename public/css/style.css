@@ -2,15 +2,18 @@
 
 * {
   border: 1px solid var(--bgcolor2);
+  box-sizing:initial;
 }
 
 :root {
-  --bgcolor1: #ffffff;
-  --bgcolor2: #003060;
-  --text1: #000000;
-  --text2: #f2ffb9;
-  --evenRows: #d2ffde;
-  --oddRows: #bbfff9;
+  --white: #FFFFFF;
+  --brown1: #DFCEB9;
+  --brown3: #F9F5F1;
+  --brown2: #AD8350;
+  --grey1: #939393;
+  --blue1: #99E0FF;
+  --green1: #9DFFA1;
+  --black: #000000;
 }
 
 .goDark {
@@ -22,11 +25,9 @@
   --oddRows: #414141;
 }
 
-* {
-  box-sizing: border-box;
-  /* border: 1px solid grey; */
+html {
+  background-color:var(--brown2);
 }
-
 body,
 html {
   background-color: var(--bgcolor1);
@@ -93,21 +94,6 @@ main {
   padding: 2% 4%;
 }
 
-/* .subButton {
-  background-color: var(--evenRows);
-  border: 0;
-  padding: 1%;
-  color: black;
-  font-weight: bold;
-  transition: background-color 0.1s;
-  cursor: pointer;
-  border-radius: 5px;
-} */
-
-/* button:hover {
-  background-color: #3486eb;
-} */
-
 .userButton {
   background-color: var(--bgcolor2);
   border: 0px;
@@ -120,4 +106,61 @@ main {
   font-weight: bold;
   transition: color 0.1s;
   margin-left: 16px;
+}
+
+
+.columns-two {
+  height: 80vh;
+  
+}
+
+.color-one {
+  background-color: var(--brown1);
+}
+.color-3 {
+  background-color: var(--brown3);
+}
+
+form {
+  background: #fff;
+  padding: 3px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-color: #000;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+li {
+  display: list-item;
+}
+
+ul {
+  display: flex;
+  overflow-y: scroll;
+  height: 100%;
+  
+}
+ul::-webkit-scrollbar {
+  display: none;
+}
+
+li:nth-child(odd) {
+  background: var(--green1);
+  display: flex;
+  flex: left;
+}
+
+li:nth-child(even) {
+  background: var(--blue1);
+  display: flex;
+  float: right;
+  justify-content: right;
+}
+
+p {
+  text-align: center;
+  background-color: var(--brown3);
+  border-radius: 10px;
 }
