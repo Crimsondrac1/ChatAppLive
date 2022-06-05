@@ -17,7 +17,8 @@ html {
 }
 
 .columns-two {
-    min-height: 80vh;
+    height: 80vh;
+    
 }
 
 .color-one {
@@ -38,16 +39,11 @@ form {
     border-top-width: 1px;
 }
 
-#messages {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; 
-}
-section.li {
+li {
     display: list-item;
 }
 
-div.ul {
+ul {
     display: flex;
     overflow-y: scroll;
     height: 100%;
@@ -70,3 +66,8 @@ li:nth-child(even) {
     justify-content: right;
 }
 
+p {
+    text-align: center;
+    background-color: var(--brown3);
+    border-radius: 10px;
+}
