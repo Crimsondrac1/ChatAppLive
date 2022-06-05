@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <title>ChatAppLive</title>
+</head>
+
+<body class= "column ml-4 mr-4 mt-4">
+    <!--div to create column to the left and right-->
+    <div class="columns">
+        <!--div to hosting the left column-->
+        <div class="column is-one-third color-one m-3 box">
+            <!--left column hosting profile picture-->
+            <section class="column">
+                <figure class="image">
+                    <img class="is-rounded" alt="profile picture" src="https://avatars.githubusercontent.com/u/9919?s=280&v=4">
+                </figure>
+            </section> 
+        </div>
+
+        <!--column nesting the chat name and messaging box-->
+        <main class="column ">
+            <div class="column color-one mb-3 box">
+                <h2 class="title">ChatAppLive - <span>Online</span></h2>
+            </div>
+            <!--Column nesting the text area-->
+            <section class="column color-one box ">
+                <div class=" column subtitle">
+                    <div class="columns">
+                        <div class="column columns-two has-background-grey">
+                            <p class="subtitle ">Placeholder for messages</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
