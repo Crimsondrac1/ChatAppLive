@@ -1,18 +1,37 @@
 const express = require("express");
-// const routes = require("./routes");
-// import sequelize connection
+const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const ejs = require("ejs");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
+const session = require("express-session");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const exphbs = require("express-handlebars");
+const hbs = exphbs.create({});
+const path = require("path");
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
-// app.use(routes);
+const sess = {
+  secret: "Super secret secret",
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+app.use(session(sess));
+
+app.use(routes);
 
 app.get("/", function (req, res) {
   res.render("index.ejs");
