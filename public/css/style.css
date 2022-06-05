@@ -4,7 +4,8 @@
   border: 1px solid var(--bgcolor2);
   box-sizing:initial;
 }
-
+/* */
+/*start css colors for page*/
 :root {
   --white: #FFFFFF;
   --brown1: #DFCEB9;
@@ -25,12 +26,14 @@
   --oddRows: #414141;
 }
 
+/* end css colors for page */
+
 html {
   background-color:var(--brown2);
 }
 body,
 html {
-  background-color: var(--bgcolor1);
+  background-color: var(--brown2);
   height: 100%;
   padding: 0;
   margin: 0;
@@ -122,7 +125,7 @@ main {
 }
 
 form {
-  background: #fff;
+  background: var(--brown1);
   padding: 3px;
   position: fixed;
   bottom: 0;
