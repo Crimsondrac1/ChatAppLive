@@ -1,7 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css";
 
 * {
-  border: 1px solid var(--bgcolor2);
   box-sizing:initial;
 }
 /* */
@@ -18,28 +17,28 @@
 }
 
 .goDark {
-  --bgcolor1: #09002b;
+  --bgcolor1: #000000;
   --bgcolor2: #a5a5a5;
-  --text1: #bcccff;
-  --text2: #180055;
+  --text1: #AD8350;
+  --text2:  #F9F5F1;
   --evenRows: #686868;
   --oddRows: #414141;
 }
 
 /* end css colors for page */
 
-html {
-  background-color:var(--brown2);
-}
 body,
 html {
-  background-color: var(--brown2);
+  background-color: var(--bgcolor1); /*broke the change to dark mode*/
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
   color: var(--text1);
   transition: background-color 1s;
+}
+
+a:hover {
+  color: #3486eb;;
 }
 
 .pageTitle {
@@ -49,7 +48,7 @@ html {
 .wrapper {
   width: 100%;
   min-height: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -61,7 +60,7 @@ html {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: var(--brown2);
   font-size: 100%;
   font-weight: bold;
   transition: color 0.1s;
@@ -77,8 +76,8 @@ html {
   cursor: pointer;
   background-color: var(--bgcolor2);
   color: var(--text2);
-  padding: 5px;
-  /* font-size: 16px; */
+  padding: 10px;
+  
   font-size: 100%;
   font-weight: bold;
   border-radius: 10px;
@@ -112,9 +111,9 @@ main {
 }
 
 
+
 .columns-two {
-  height: 80vh;
-  
+  height: 70vh;
 }
 
 .color-one {
@@ -124,19 +123,9 @@ main {
   background-color: var(--brown3);
 }
 
-form {
-  background: var(--brown1);
-  padding: 3px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  border-color: #000;
-  border-top-style: solid;
-  border-top-width: 1px;
-}
-
 li {
   display: list-item;
+  border-radius: 20px;
 }
 
 ul {
@@ -166,4 +155,11 @@ p {
   text-align: center;
   background-color: var(--brown3);
   border-radius: 10px;
+  top: 50%;
+}
+
+.text-center {
+  text-align: center;
+  border-top: #000000 solid 1px;
+  border-bottom: #000000 solid 1px;
 }

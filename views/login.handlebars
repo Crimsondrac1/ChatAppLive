@@ -1,33 +1,85 @@
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit" class="userButton">login</button>
-  </div>
-</form>
+<div class="color-one box m-3">
+  <form class="login-form column">
 
-<form class="signup-form">
-  <div>
-    <label for="username-signup">username:</label>
-    <input type="text" id="username-signup" />
+    <div class="field">
+      <label for="email-login label">Email:</label>
+      <div class="control column">
+        <input class="input" type="text" id="email-login" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="password-login label">Password:</label>
+      <div class="control column">
+        <input class="input" type="password" id="password-login" />
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control column">
+        <button type="submit" class="userButton button is-warning pl-6 pr-6">Login</button>
+      </div>
+    </div>
+  </form>
+
+  <div class="column is-vcentered">
+    <section class="text-center">or</section>
   </div>
-  <div>
-    <label for="email-signup">email:</label>
-    <input type="text" id="email-signup" />
+
+  <form class="signup-form column ">
+
+    <div class="field">
+      <label for="username-signup">Username:</label>
+      <div class="control column">
+        <input class="input" type="text" id="username-signup" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="email-signup">Email:</label>
+      <div class="control column">
+        <input class="input" type="text" id="email-signup" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="password-signup">Password:</label>
+      <div class="control column">
+        <input class="input" type="password" id="password-signup" />
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <button  type="submit" class="userButton button is-warning pl-6 pr-6 ">Signup</button>
+      </div>
+    </div>
+  </form>
+
+<div class="column is-vcentered">
+  <section class="text-center">and</section>
+</div>
+
+  <div id="file-js-example" class="file has-name is=warning columns">
+    <div class="column is-narrow">Upload a profile picture:</div>
+    <label class="file-label column">
+      <input class="file-input" type="file" name="resume">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Choose a file…
+        </span>
+      </span>
+      <span class="file-name">
+        No file uploaded
+      </span>
+    </label>
   </div>
-  <div>
-    <label for="password-signup">password:</label>
-    <input type="password" id="password-signup" />
-  </div>
-  <div>
-    <button type="submit" class="userButton">signup</button>
-  </div>
-</form>
+
+
+
+</div>
 
 <script src="/js/login.js"></script>

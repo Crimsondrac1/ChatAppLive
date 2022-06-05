@@ -1,41 +1,43 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChatAppLive</title>
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatAppLive</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
 
-  <body>
-    <div class="wrapper">
-      <header class="column">
-        <h1 class="column color-one mb-3 box">
-          <a href="/" class="title column">ChatAppLive - 🟢</a>
-        </h1>
-        <nav>
-          <button id="logout" class="btn-no-style">logout</button>
-          /
-          <a href="/login">login</a>
-        </nav>
-      </header>
-      <main>
+<body>
+  <div class="wrapper">
+    <header class="column ml-6 mr-6">
+      <h1 class=" color-one mb-3 box">
+        <a href="/" class="title column">ChatAppLive - 🟢</a>
+      </h1>
+      <nav>
+        <button id="logout" class="btn-no-style">logout</button>
+        /
+        <a href="/login">login</a>
+      </nav>
+    </header>
+    <main>
 
-        {{{body}}}
-      </main>
-      <footer>
-        <div class="columns is-vcentered">
-          <div class="column is-6 has-text-centered p-5">
-            Thanks for visiting!
-          </div>
-          <div class="column is-6 has-text-centered">
-            <button id="dark" class="light-mode-button">Dark</button>
+      {{{body}}}
 
-          </div></div>
-      </footer>
-    </div>
-    <script src="/js/logout.js"></script>
-    <script src="/js/dark.js"></script>
-  </body>
+    </main>
+    <footer class="color-one ml-6 mr-6 box ">
+      <div class="columns is-vcentered">
+        <div class="column is-6 has-text-centered p-5">
+          Thanks for visiting!
+        </div>
+        <div class="column is-6 has-text-centered">
+          <button id="dark" class=" light-mode-button">Dark Mode</button>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="/js/logout.js"></script>
+  <script src="/js/dark.js"></script>
+</body>
 
 </html>
