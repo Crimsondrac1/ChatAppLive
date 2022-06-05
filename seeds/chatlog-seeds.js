@@ -20,7 +20,7 @@ const chatData = [
     user_id: 5,
   },
   {
-    pdialog: "Hiya :)",
+    dialog: "Hiya :)",
     sequence: 4,
     chat_id: 1,
     user_id: 4,

@@ -1,20 +1,31 @@
 const { Users } = require("../models");
+const { Model, DataTypes } = require("sequelize");
 
 const userData = [
   {
-    user_name: "Mary",
+    username: "Mary",
+    email: "111@111.com",
+    password: "11111",
   },
   {
-    user_name: "Jake",
+    username: "Jake",
+    email: "222@222.com",
+    password: "11111",
   },
   {
-    user_name: "Paul",
+    username: "Paul",
+    email: "333@333.com",
+    password: "11111",
   },
   {
-    user_name: "Tanya",
+    username: "Tanya",
+    email: "444@444.com",
+    password: "11111",
   },
   {
-    User_name: "Donna",
+    username: "Donna",
+    email: "555@555.com",
+    password: "11111",
   },
 ];
 

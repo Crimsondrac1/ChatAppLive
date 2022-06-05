@@ -1,12 +1,16 @@
 const router = require("express").Router();
-const apiRoutes = require("./api");
-const ejs = require("ejs");
+const chatRoutes = require("./chat");
+// const ejs = require("ejs");
 
 router.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("homepage");
 });
 
-router.use("/api", apiRoutes);
+router.get("/login", (req, res) => {
+  res.render("login");
+});
+
+router.use("/chat", chatRoutes);
 
 router.use((req, res) => {
   res.send("<h1>Wrong Route!</h1>");

@@ -22,7 +22,6 @@ Logs.init(
     sequence: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-      autoIncrement: true,
     },
 
     chat_id: {
