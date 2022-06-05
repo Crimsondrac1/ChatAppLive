@@ -1,16 +1,18 @@
 *{
     box-sizing:initial;
 }
+:root {
+    --white: #FFFFFF;
+    --brown1: #DFCEB9;
+    --brown2: #AD8350;
+    --grey1: #939393;
+    --blue1: #99E0FF;
+    --green1: #9DFFA1;
+    --black: #000000;
+}
 
 html {
-    background-color: #ad8350;
-}
-.full-height {
-    height: 100vh;
-}
-
-.columns-one {
-    height: 100vh;
+    background-color:var(--brown2);
 }
 
 .columns-two {
@@ -18,5 +20,5 @@ html {
 }
 
 .color-one {
-    background-color: #DFCEB9;
+    background-color: var(--brown1);
 }
