@@ -4,6 +4,7 @@
 :root {
     --white: #FFFFFF;
     --brown1: #DFCEB9;
+    --brown3: #F9F5F1;
     --brown2: #AD8350;
     --grey1: #939393;
     --blue1: #99E0FF;
@@ -21,4 +22,48 @@ html {
 
 .color-one {
     background-color: var(--brown1);
+}
+.color-3 {
+    background-color: var(--brown3);
+}
+
+form {
+    background: #fff;
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-color: #000;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; 
+}
+li {
+    display: flex;
+    overflow-x: auto;
+}
+
+
+
+li:nth-child(odd) {
+    background: var(--green1);
+    width: 50%;
+    display: flex;
+    flex: left;
+}
+
+li:nth-child(even) {
+    background: var(--blue1);
+    width: 50%;
+    display: flex;
+    float: right;
+}
+
+img {
+    width: 50%;
 }
