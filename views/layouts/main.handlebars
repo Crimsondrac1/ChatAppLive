@@ -1,0 +1,45 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatAppLive</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="pageTitle">
+          <a href="/">ChatAppLive</a>
+        </h1>
+        <nav>
+          {{#if loggedIn}}
+          <button id="logout" class="btn-no-style">logout</button>
+          {{else}}
+          <a href="/login">login</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        <div class="columns is-vcentered">
+          <div class="column is-6 has-text-centered p-5">
+            Thanks for visiting!
+          </div>
+          <div class="column is-6 has-text-centered">
+            <button id="dark" class="light-mode-button">Dark</button>
+          </div></div>
+      </footer>
+    </div>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+    <script src="/js/dark.js"></script>
+
+
+  </body>
+
+</html>
