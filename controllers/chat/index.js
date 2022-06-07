@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const logs = require("./logs");
-const users = require("./users");
+const logs = require("./logs.js");
+const users = require("./users.js");
 const homeRoutes = require("./home-routes.js");
 
 //Setup endpoints

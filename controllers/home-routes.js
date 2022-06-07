@@ -68,11 +68,21 @@ router.get("/post/:id", (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/").json({ message: "Logged in" });
     return;
   }
 
   res.render("login");
+});
+
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 router.get("/signup", (req, res) => {
