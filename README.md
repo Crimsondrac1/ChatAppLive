@@ -31,8 +31,8 @@ Doug Erickson, Christopher Kimball, Ambrose Shokunbi
 ## Questions:
 ### Github:
 
-[Christopher](https://github.com/...) /
-[Ambrose](https://github.com/...) /
+[Christopher](https://github.com/axdot) 
+[Ambrose](https://github.com/ashokunb) 
 [Doug](https://github.com/Crimsondrac1) 
 
 

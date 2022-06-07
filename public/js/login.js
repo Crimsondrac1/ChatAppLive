@@ -22,6 +22,19 @@ async function loginFormHandler(event) {
   }
 }
 
+function fileupload(event) {
+  event.preventDefault();
+
+  const fileInput = document.querySelector('#file-js-example input[type=file]');
+  fileInput.onchange = () => {
+    if (fileInput.files.length > 0) {
+      const fileName = document.querySelector('#file-js-example .file-name');
+      fileName.textContent = fileInput.files[0].name;
+    }
+}
+}
+
 document
   .querySelector(".login-form")
-  .addEventListener("submit", loginFormHandler);
+  .addEventListener("submit", loginFormHandler, fileupload);
+

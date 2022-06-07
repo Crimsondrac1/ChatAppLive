@@ -9,7 +9,7 @@ function toggle_light_mode() {
   let toggle = document.querySelector(".light-mode-button");
   if (localStorage.getItem("goDark")) {
     // document.body.classList.add("goDark");
-    toggle.innerText = "Light";
+    toggle.innerText = "Light Mode";
   } else {
     toggle.addEventListener("click", function (e) {
       e.preventDefault();
@@ -18,11 +18,11 @@ function toggle_light_mode() {
         // Turning the theme off:
         document.body.classList.remove("goDark");
         localStorage.darkMode = " ";
-        toggle.innerText = "Dark";
+        toggle.innerText = "Dark Mode";
       } else {
         document.body.classList.add("goDark");
         localStorage.darkMode = "goDark";
-        toggle.innerText = "Light";
+        toggle.innerText = "Light Mode";
       }
     });
   }
