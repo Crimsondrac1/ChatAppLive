@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const chatRoutes = require("./chat");
+const homeRoutes = require("./home-routes.js");
 // const ejs = require("ejs");
+
+router.use("/", homeRoutes);
 
 router.get("/", (req, res) => {
   res.render("homepage");

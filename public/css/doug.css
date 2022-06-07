@@ -1,0 +1,30 @@
+:root {
+    --white: #FFFFFF;
+    --brown1: #DFCEB9;
+    --brown3: #F9F5F1;
+    --brown2: #AD8350;
+    --grey1: #939393;
+    --blue1: #99E0FF;
+    --green1: #9DFFA1;
+    --black: #000000;
+  }
+  
+  .goDark {
+    --bgcolor1: #09002b;
+    --bgcolor2: #a5a5a5;
+    --text1: #bcccff;
+    --text2: #180055;
+    --evenRows: #686868;
+    --oddRows: #414141;
+  }
+
+.textbox-style {
+    padding: 3px;
+    border-radius: 5px;
+    box-shadow: 5px 3px 3px var(--grey1);
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+}
