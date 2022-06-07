@@ -171,7 +171,7 @@ ul::-webkit-scrollbar {
 li:nth-child(odd) {
   background: var(--hl1);
   display: flex;
-  flex: left;
+  float: left;
 }
 
 li:nth-child(even) {
