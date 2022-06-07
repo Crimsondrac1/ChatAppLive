@@ -1,15 +1,15 @@
 async function logout() {
-  const response = await fetch('/logout', {
-    method: 'post',
-    headers: { 'Content-Type': 'application/json' }
+  const response = await fetch("/chat/users/logout", {
+    method: "post",
+    headers: { "Content-Type": "application/json" },
   });
 
   if (response.ok) {
-    document.location.replace('/');
+    document.location.replace("/");
   } else {
     alert(response.statusText);
   }
 }
 
-// document.querySelector('#logout').addEventListener('click', logout);
-document.getElementById('logout').addEventListener('click', logout);
+document.querySelector("#log-out").addEventListener("click", logout);
+// document.getElementById('logout').addEventListener('click', logout);

@@ -1,4 +1,4 @@
-const { Logs } = require("../models");
+const { Log } = require("../models");
 
 const chatData = [
   {
@@ -33,6 +33,6 @@ const chatData = [
   },
 ];
 
-const seedChat = () => Logs.bulkCreate(chatData);
+const seedChat = () => Log.bulkCreate(chatData);
 
 module.exports = seedChat;

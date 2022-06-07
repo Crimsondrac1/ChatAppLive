@@ -1,46 +1,38 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Logs, User } = require("../models");
+const { Log, User } = require("../models");
 
-// router.get("/", (req, res) => {
-//   Logs.findAll({
-//     attributes: ["id", "dialog", "sequence", "cat_id", "user_id"],
-//     include: [
-//       {
-//         model: User,
-//         attributes: ["username"],
-//       },
-//     ],
-//   })
-//     .then((dbPostData) => {
-//       const logs = dbPostData.map((log) => log.get({ plain: true }));
+router.get("/", (req, res) => {
+  Log.findAll({
+    attributes: ["id", "dialog", "sequence", "chat_id", "user_id"],
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
+  })
+  .then((dbPostData) => {
+    const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-//       res.render("homepage", {
-//         logs,
-//         loggedIn: req.session.loggedIn,
-//       });
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
+    res.render("homepage", {
+      posts,
+      loggedIn: req.session.loggedIn,
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
 
 router.get("/post/:id", (req, res) => {
-  Logs.findOne({
+  Log.findOne({
     where: {
       id: req.params.id,
     },
     attributes: ["id", "title", "description", "url", "created_at"],
     include: [
-      {
-        model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-        include: {
-          model: User,
-          attributes: ["username"],
-        },
-      },
       {
         model: User,
         attributes: ["username"],
@@ -56,7 +48,7 @@ router.get("/post/:id", (req, res) => {
       const post = dbPostData.get({ plain: true });
 
       res.render("single-post", {
-        post,
+        log,
         loggedIn: req.session.loggedIn,
       });
     })
@@ -68,7 +60,7 @@ router.get("/post/:id", (req, res) => {
 
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/").json({ message: "Logged in" });
+    res.redirect("/");
     return;
   }
 

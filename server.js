@@ -3,7 +3,7 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+const moment = require('moment');
 // This is part of socket.io
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
@@ -37,10 +37,6 @@ const sess = {
 app.use(session(sess));
 app.use(routes);
 
-app.get("/", function (req, res) {
-  res.render("index.ejs");
-});
-
 // io.sockets.on("connection", function (socket) {
 //   socket.on("username", function (username) {
 //     socket.username = username;
@@ -58,6 +54,7 @@ app.get("/", function (req, res) {
 //     );
 //   });
 // });
+
 
 sequelize.sync({ force: false }).then(() => {
   http.listen(PORT, () => {

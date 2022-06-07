@@ -1,4 +1,4 @@
-const { Users } = require("../models");
+const { User } = require("../models");
 const { Model, DataTypes } = require("sequelize");
 
 const userData = [
@@ -29,6 +29,6 @@ const userData = [
   },
 ];
 
-const seedUsers = () => Users.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData);
 
 module.exports = seedUsers;

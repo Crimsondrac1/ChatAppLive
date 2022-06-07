@@ -5,7 +5,7 @@ async function loginFormHandler(event) {
   const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
-    const response = await fetch("/login", {
+    const response = await fetch("/chat/users/login", {
       method: "post",
       body: JSON.stringify({
         email,
@@ -22,19 +22,21 @@ async function loginFormHandler(event) {
   }
 }
 
-function fileupload(event) {
-  event.preventDefault();
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
-  const fileInput = document.querySelector('#file-js-example input[type=file]');
-  fileInput.onchange = () => {
-    if (fileInput.files.length > 0) {
-      const fileName = document.querySelector('#file-js-example .file-name');
-      fileName.textContent = fileInput.files[0].name;
-    }
-}
-}
+// function fileupload(event) {
+//   event.preventDefault();
 
-document
-  .querySelector(".login-form")
-  .addEventListener("submit", loginFormHandler, fileupload);
+//   const fileInput = document.querySelector('#file-js-example input[type=file]');
+//   fileInput.onchange = () => {
+//     if (fileInput.files.length > 0) {
+//       const fileName = document.querySelector('#file-js-example .file-name');
+//       fileName.textContent = fileInput.files[0].name;
+//     }
+// }
+// }
+
+// document
+//   .querySelector(".login-form")
+//   .addEventListener("submit", loginFormHandler, fileupload);
 

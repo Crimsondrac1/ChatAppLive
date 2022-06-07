@@ -1,12 +1,68 @@
 const router = require("express").Router();
+const { User, Log } = require("../../models");
 const sequelize = require("../../config/connection");
-const { Logs, Users } = require("../../models");
+const chkSession = require("../../utils/session");
 
 router.get("/", (req, res) => {
-  Users.findAll({
-    attributes: ["id", "username", "email"],
+  User.findAll({
+    attributes: { exclude: ["password"] },
   })
-    .then((Data) => res.json(Data))
+    .then((dbUserData) => res.json(dbUserData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get("/:id", (req, res) => {
+  User.findOne({
+    attributes: { exclude: ["password"] },
+    where: {
+      id: req.params.id,
+    },
+    include: [
+      {
+        model: Log,
+        attributes: ["id", "title", "post_text", "created_at"],
+      },
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "created_at"],
+        include: {
+          model: Log,
+          attributes: ["title"],
+        },
+      },
+    ],
+  })
+    .then((dbUserData) => {
+      if (!dbUserData) {
+        res.status(404).json({ message: "Invalid user ID." });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.post("/", (req, res) => {
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+  })
+    .then((dbUserData) => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+
+        res.json(dbUserData);
+      });
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -14,13 +70,13 @@ router.get("/", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  Users.findOne({
+  User.findOne({
     where: {
-      username: req.body.username,
+      email: req.body.email,
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
-      res.status(400).json({ message: "Unknown username." });
+      res.status(400).json({ message: "Unknown email." });
       return;
     }
 
@@ -33,7 +89,7 @@ router.post("/login", (req, res) => {
 
     req.session.save(() => {
       req.session.id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: "You are now logged in!" });
@@ -42,7 +98,7 @@ router.post("/login", (req, res) => {
 });
 
 router.post("/signup", async (req, res) => {
-  var newUser = new Users({
+  var newUser = new User({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
@@ -73,10 +129,18 @@ router.post("/signup", async (req, res) => {
     });
 });
 
-
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
 
 router.put("/:id", (req, res) => {
-  Users.update(req.body, {
+  User.update(req.body, {
     individualHooks: true,
     where: {
       id: req.params.id,
@@ -96,7 +160,7 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  Users.destroy({
+  User.destroy({
     where: {
       id: req.params.id,
     },

@@ -4,18 +4,22 @@ const homeRoutes = require("./home-routes.js");
 
 router.use("/", homeRoutes);
 
-router.get("/", (req, res) => {
-  res.render("homepage");
-});
+// router.get("/", (req, res) => {
+//   res.render("homepage");
+// });
 
-router.get("/login", (req, res) => {
-  res.render("login");
-});
+// router.get("/chat", (req, res) => {
+//   res.render("chat");
+// });
+
+// router.get("/login", (req, res) => {
+//   res.render("login");
+// });
 
 router.use("/chat", chatRoutes);
 
-router.use((req, res) => {
-  res.send("<h1>Wrong Route!</h1>");
-});
+// router.use((req, res) => {
+//   res.send("<h1>Wrong Route!</h1>");
+// });
 
 module.exports = router;
