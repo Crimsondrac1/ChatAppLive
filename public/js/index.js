@@ -13,8 +13,8 @@ $(document).ready(()=>{
   socket.emit('get online users');
 
   // Users can change the channel by clicking on its name.
-  $(document).on('click', '.channel', (e)=>{
-    let newChannel = e.target.textContent;
+  $(document).on('click', '.channel', (event)=>{
+    let newChannel = event.target.textContent;
     socket.emit('user changed channel', newChannel);
   });
 
@@ -70,10 +70,10 @@ $(document).ready(()=>{
     $('.message').remove();
     data.messages.forEach((message) => {
       $('.message-container').append(`
-        <div class="message">
-          <p class="message-user">${message.sender}: </p>
-          <p class="message-text">${message.message}</p>
-        </div>
+        <ul class="message messages">
+          <li class="message-user">${message.sender}: </li>
+          <li class="message-text">${message.message}</li>
+        </ul>
       `);
     });
   });
@@ -90,10 +90,10 @@ $(document).ready(()=>{
     let currentChannel = $('.channel-current').text();
     if(currentChannel == data.channel) {
       $('.message-container').append(`
-        <div class="message">
-          <p class="message-user">${data.sender}: </p>
-          <p class="message-text">${data.message}</p>
-        </div>
+        <ul class="message">
+          <li class="message-user">${data.sender}: </li>
+          <li class="message-text">${data.message}</li>
+        </ul>
       `);
     }
   });

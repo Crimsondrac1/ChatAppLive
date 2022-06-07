@@ -10,7 +10,7 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Port declaration for Heroku or 3001
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 // This is part of socket.io. Socket.io must use the http server.
 const server = require('http').Server(app);
