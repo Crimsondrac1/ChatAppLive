@@ -4,7 +4,9 @@ var ready = (callback) => {
 }
 
 ready(()=>{
+  console.log ('socket not connected YET')
   const socket = io.connect();
+  console.log ('socket connected')
 
   //Keep track of the current user
   let currentUser;
@@ -25,7 +27,6 @@ ready(()=>{
       // Save the current user when created
       currentUser = $('#username-input').val();
       $('.username-form').remove();
-      $('.main-container').css('display', 'flex');
     }
   });
 
@@ -70,7 +71,7 @@ ready(()=>{
     $('.message').remove();
     data.messages.forEach((message) => {
       $('.message-container').appendchild(`
-      <ul class="message">
+      <ul class="message "mt-4", "mb-4", "column", "is-three-fifths", "is-half-mobile">
         <li class="message-user">${message.sender}: </li>
         <li class="message-text">${message.message}</li>
       </ul>
@@ -81,7 +82,7 @@ ready(()=>{
   // socket listeners
   socket.on('new user', (username) => {
     console.log(`${username} has joined the chat`);
-    $('.users-online').append(`<div class="user-online">${username}</div>`);
+    $('.users-online').append(`<p class="user-online column m-2">${username}</p>`);
   })
 
   // Output the new message

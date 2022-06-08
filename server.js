@@ -16,8 +16,9 @@ let channels = {"General" : []};
 
 io.on("connection", (socket) => {
   console.log("🔌 New user connected! 🔌")
+  
   // This file will be read on new socket connections
-  // require('./public/js/chat')(io, socket, onlineUsers, channels);
+  
 
   socket.on('new user', (username) => {
     // Save the username as key to access the user's socket id

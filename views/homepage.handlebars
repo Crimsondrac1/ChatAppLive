@@ -9,10 +9,14 @@
                     <img class="is-rounded" alt="profile picture"
                         src="https://avatars.githubusercontent.com/u/9919?s=280&v=4">
                 </figure>
+                    <form class="username-form">
+                        <input id="username-input" placeholder="Username"></input>
+                        <button id="create-user-btn">Join Chat</button>
+                    </form>
             </section>
 
-            <section class="container">
-                <p class="column m-2">user 1</p>
+            <section class="container users-online">
+                
                 {{#each username}}
                 <p class="column m-2">{{this}}</p>
                 {{/each}}
@@ -30,10 +34,10 @@
                         </div>
                     </div>
                     
-                    <div id="message-container" class="columns color-one ">
+                    <div id="message-container" class="columns color-one message-container">
                         <input id="textbox" class="input is-warning column is-11-mobile  mt-2 color-3" type="text"
                             placeholder="Start typing...">
-                        <div class="column is-narrow"><button type="submit" id="button"
+                        <div class="column is-narrow"><button type="submit" id="button send-chat-btn"
                                 class="button is-warning">Send</button>
                         </div>
                     </div>
