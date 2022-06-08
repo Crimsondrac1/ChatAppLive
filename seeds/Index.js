@@ -15,4 +15,5 @@ const seedAll = async () => {
   process.exit(0);
 };
 
+
 seedAll();
