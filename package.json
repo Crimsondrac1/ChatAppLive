@@ -15,9 +15,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    
-  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bulma": "^0.9.4",
@@ -29,7 +26,7 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "sequelize": "^6.20.1",
-    "socket.io": "^4.5.1"
+    "socket.io": "^4.5.1",
     "nodemon": "^2.0.16"
   }
 }
