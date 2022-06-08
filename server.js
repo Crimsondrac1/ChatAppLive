@@ -56,8 +56,6 @@ app.use(routes);
 //     );
 //   });
 // });
-
-
 sequelize.sync({ force: false }).then(() => {
   http.listen(PORT, () => {
     console.log(`App listening on http://localhost:${PORT}`);
