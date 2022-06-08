@@ -15,6 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "url": "git+https://github.com/Crimsondrac1/ChatAppLive.git",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bulma": "^0.9.4",
