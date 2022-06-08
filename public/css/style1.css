@@ -28,17 +28,6 @@ html {
     background-color: var(--brown3);
 }
 
-form {
-    background: #fff;
-    padding: 3px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-color: #000;
-    border-top-style: solid;
-    border-top-width: 1px;
-}
-
 li {
     display: list-item;
 }

@@ -150,6 +150,7 @@ form {
   border-color: var(--cont2);
   border-top-style: solid;
   border-top-width: 1px;
+  border-radius: 10px;
 }
 
 li {

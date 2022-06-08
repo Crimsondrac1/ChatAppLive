@@ -15,10 +15,12 @@
         <a href="/" class="title column">ChatAppLive - 🟢</a>
       </h1>
       <nav>
-        <button id="logout" class="btn-no-style">logout</button>
-        /
-        <a href="/login">login</a>
-      </nav>
+          {{#if loggedIn}}
+            <button id="log-out" class="btn-no-style nav-link">Logout</button>
+          {{else}}
+            <a href="/login" class="btn-no-style nav-link">Login</a>
+          {{/if}}
+        </nav>
     </header>
     <main>
 
@@ -38,6 +40,8 @@
     </footer>
   </div>
   <script src="/js/logout.js"></script>
+  {{!-- <script src="/js/login.js"></script> --}}
+  {{!-- <script src="/js/signup.js"></script> --}}
   <script src="/js/dark.js"></script>
 </body>
 
