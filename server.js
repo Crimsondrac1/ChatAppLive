@@ -37,6 +37,8 @@ const sess = {
 app.use(session(sess));
 app.use(routes);
 
+// 
+
 // io.sockets.on("connection", function (socket) {
 //   socket.on("username", function (username) {
 //     socket.username = username;
