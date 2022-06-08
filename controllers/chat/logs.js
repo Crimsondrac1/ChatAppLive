@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Log, Users } = require("../../models");
+const { Log, Users } = require("../../../models");
 const sequelize = require("../../config/connection");
 const chkSession = require("../../utils/session");
 
