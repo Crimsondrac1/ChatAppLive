@@ -17,7 +17,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> 45a5bd4adf75013cdb01f086b30c4b5dea9fe9e4
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
