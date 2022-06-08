@@ -1,12 +1,12 @@
 const express = require("express");
-const routes = require("./app/controllers");
+const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const moment = require('moment');
 // This is part of socket.io
 const http = require("http").Server(app);
-const io = require("socket.io")(http);
+// const io = require("socket.io")(http);
 
 // These are for logins/logouts.
 const session = require("express-session");
