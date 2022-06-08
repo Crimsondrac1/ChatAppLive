@@ -1,57 +1,90 @@
-var socket = io();
-var $loginForm = $('#login-form');
-var $loginArea = $('#login-area');
-var $msgForm = $('#message-form');
-var $messageArea = $('#message-area');
-var $errorMessage = $('#error-msg');
+const chatForm = document.getElementById('chat-form');
+const chatMessages = document.querySelector('.chat-messages');
+const roomName = document.getElementById('room-name');
+const userList = document.getElementById('users');
 
-socket.on('connect', function() {
-	$loginForm.on('submit', function(e) {
-		e.preventDefault();
-		var $username = $.trim($loginForm.find('input[name=username]').val());
-		var $room = $.trim($loginForm.find('input[name=room]').val());
-		socket.emit('joinRoom', {
-			username: $username,
-			room: $room
-		}, function(data) {
-			if (data.nameAvailable) {
-				$(".room-title").text('You are in the room: ' + $room);
-				$messageArea.show();
-				$loginArea.hide('slow');
-			} else {
-				$errorMessage.text(data.error);
-			}
-		});
-	});
+// Get username and room from URL
+const { username, room } = Qs.parse(location.search, {
+  ignoreQueryPrefix: true,
 });
 
-function scrollSmoothToBottom(id) {
-	var div = document.getElementById(id);
-	$('#' + id).animate({
-		scrollTop: div.scrollHeight - div.clientHeight
-	}, 500);
+const socket = io();
+
+// Join chatroom
+socket.emit('joinRoom', { username, room });
+
+// Get room and users
+socket.on('roomUsers', ({ room, users }) => {
+  outputRoomName(room);
+  outputUsers(users);
+});
+
+// Message from server
+socket.on('message', (message) => {
+  console.log(message);
+  outputMessage(message);
+
+  // Scroll down
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+});
+
+// Message submit
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Get message text
+  let msg = e.target.elements.msg.value;
+
+  msg = msg.trim();
+
+  if (!msg) {
+    return false;
+  }
+
+  // Emit message to server
+  socket.emit('chatMessage', msg);
+
+  // Clear input
+  e.target.elements.msg.value = '';
+  e.target.elements.msg.focus();
+});
+
+// Output message to DOM
+function outputMessage(message) {
+  const div = document.createElement('div');
+  div.classList.add('message');
+  const p = document.createElement('p');
+  p.classList.add('meta');
+  p.innerText = message.username;
+  p.innerHTML += `<span>${message.time}</span>`;
+  div.appendChild(p);
+  const para = document.createElement('p');
+  para.classList.add('text');
+  para.innerText = message.text;
+  div.appendChild(para);
+  document.querySelector('.chat-messages').appendChild(div);
 }
 
-socket.on('message', function(message) {
-	var momentTimestamp = moment.utc(message.timestamp);
-	var $message = $('#messages');
-	$message.append('<p><strong>' + message.username + '</strong> <span class="time">' + momentTimestamp.local().format("h:mma") + '</span></p>');
-	$message.append('<div class="wrap-msg"><p>' + message.text + '</p></div>');
-	scrollSmoothToBottom('messages');
-});
+// Add room name to DOM
+function outputRoomName(room) {
+  roomName.innerText = room;
+}
 
-$msgForm.on('submit', function(e) {
-	e.preventDefault();
-	var $message = $msgForm.find('input[name=message]');
-	var $username = $loginForm.find('input[name=username]');
-	var reg = /<(.|\n)*?>/g;
-	if (reg.test($message.val()) == true) {
-		alert('Sorry, that is not allowed!');
-	} else {
-		socket.emit('message', {
-			username: $.trim($username.val()),
-			text: $message.val()
-		});
-	}
-	$message.val('');
+// Add users to DOM
+function outputUsers(users) {
+  userList.innerHTML = '';
+  users.forEach((user) => {
+    const li = document.createElement('li');
+    li.innerText = user.username;
+    userList.appendChild(li);
+  });
+}
+
+//Prompt the user before leave chat room
+document.getElementById('leave-btn').addEventListener('click', () => {
+  const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
+  if (leaveRoom) {
+    window.location = '../index.html';
+  } else {
+  }
 });

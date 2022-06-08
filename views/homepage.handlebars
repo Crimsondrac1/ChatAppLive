@@ -1,4 +1,5 @@
 <body class="column ml-4 mr-4 mt-4">
+<<<<<<< Updated upstream
     <!--div to create column to the left and right-->
     <div class="columns">
         <!--div to hosting the left column-->
@@ -63,3 +64,68 @@ const button = document.getElementById("button")
 })
 
 </script>
+=======
+  <!--div to create column to the left and right-->
+  <div class="columns">
+    <!--div to hosting the left column-->
+    <div class="column is-one-third color-one m-3 box">
+      <!--left column hosting profile picture-->
+      <section class="column">
+        <h2 id="room-name"></h2>
+        <figure class="image">
+          <img
+            class="is-rounded"
+            alt="profile picture"
+            src="https://avatars.githubusercontent.com/u/9919?s=280&v=4"
+          />
+        </figure>
+      </section>
+
+      <section class="container">
+        <ul id="users"></ul>
+      </section>
+    </div>
+
+    <!--column nesting the chat name and messaging box-->
+    <main class="column">
+      <!--Column nesting the text area-->
+      <section class="column color-one box">
+        <div class="column subtitle">
+          <div class="columns">
+            <div class="column columns-two">
+
+              <ul id="messages" class="m-2 column contain">
+                <div
+                  class="mt-4 mb-4 column is-three-fifths chat-messages"
+                ></div>
+              </ul>
+
+            </div>
+          </div>
+          <div class="chat-form-container">
+            <form id="chat-form">
+              <input
+                id="msg"
+                type="text"
+                placeholder="Enter Message"
+                required
+                autocomplete="off"
+              />
+              <button class="btn"><i class="fas fa-paper-plane"></i>
+                Send</button>
+            </form>
+          </div>
+
+          {{! <div class="columns color-one ">
+                        <input class="input is-warning column  mt-2 color-3" type="text" placeholder="Start typing...">
+                        <div class="column is-narrow"><button class="button is-warning ">Send</button></div>
+                    </div> }}
+
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+</body>
+>>>>>>> Stashed changes
