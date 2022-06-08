@@ -13,8 +13,9 @@
 
             <section class="container">
                 <p class="column m-2">user 1</p>
-                <p class="column m-2">user 2</p>
-                <p class="column m-2">user 3</p>
+                {{#each username}}
+                <p class="column m-2">{{this}}</p>
+                {{/each}}
             </section>
         </div>
 
