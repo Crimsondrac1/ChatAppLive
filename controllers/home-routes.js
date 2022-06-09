@@ -67,6 +67,15 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/chat", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/chat");
+    return;
+  }
+
+  res.render("login");
+});
+
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

@@ -193,3 +193,8 @@ p {
   border-top: #000000 solid 1px;
   border-bottom: #000000 solid 1px;
 }
+
+.message-in {
+  width: 90%;
+  margin-bottom: 5px;
+}
