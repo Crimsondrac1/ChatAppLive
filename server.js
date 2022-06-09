@@ -29,21 +29,27 @@ const sess = {
 
 // Store users in an object
 let onlineUsers = {};
-
+const users = {};
 // Save the channels in an object
 let channels = { General: [] };
 
-io.on("connection", (socket) => {
-  console.log("🔌 New user connected! 🔌");
+// io.on("connection", (socket) => {
+//   console.log("🔌 New user connected! 🔌");
 
-  socket.on("new user", (username) => {
-    // Save the username as key to access the user's socket id
-    onlineUsers[username] = socket.id;
-    //Save the username to socket as well. This is important for later.
-    socket["username"] = username;
-    console.log(`✋ ${username} has joined the chat! ✋`);
-    io.emit("new user", username);
-  });
+//   socket.on("new-user", (username) => {
+//     // Save the username as key to access the user's socket id
+//     onlineUsers[username] = socket.id;
+//     //Save the username to socket as well. This is important for later.
+//     socket["username"] = username;
+//     console.log(`✋ ${username} has joined the chat! ✋`);
+//     io.emit("new-user", username);
+//   });
+
+io.on('connection' , socket => {
+  socket.on('new-user', name => {
+      users[socket.id] = name
+      socket.broadcast.emit('user-connected', name)
+  })
 
   socket.on("send-chat-message", (message) => {
     // console.log(message)
@@ -64,10 +70,10 @@ io.on("connection", (socket) => {
   //   io.to(data.channel).emit("new message", data);
   // });
 
-  socket.on("get online users", () => {
-    // Send over the onlineUsers
-    socket.emit("get online users", onlineUsers);
-  });
+  // socket.on("get online users", () => {
+  //   // Send over the onlineUsers
+  //   socket.emit("get online users", onlineUsers);
+  // });
 
   // This fires when a user closes out of the application
   // socket.on("disconnect") is a special listener that fires when a user exits out of the application.
@@ -110,7 +116,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-const users = {};
+
 
 // Old New User prompt
 // io.on('connection' , socket => {

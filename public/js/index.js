@@ -23,7 +23,7 @@ ready(()=>{
   $('#create-user-btn').click((event)=>{
     event.preventDefault();
     if($('#username-input').val().length > 0){
-      socket.emit('new user', $('#username-input').val());
+      socket.emit('new-user', $('#username-input').val());
       // Save the current user when created
       currentUser = $('#username-input').val();
       $('.username-form').remove();
@@ -46,7 +46,7 @@ ready(()=>{
   });
 
   // socket listeners
-  socket.on('new user', (username) => {
+  socket.on('new-user', (username) => {
     console.log(`${username} has joined the chat`);
     $('.users-online').append(`<p class="user-online column m-2">${username}</p>`);
   })
