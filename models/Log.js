@@ -4,10 +4,10 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 // Initialize Product model (table) by extending off Sequelize's Model class
-class Logs extends Model {}
+class Log extends Model {}
 
 // set up fields and rules for Product model
-Logs.init(
+Log.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -22,7 +22,6 @@ Logs.init(
     sequence: {
       type: DataTypes.DECIMAL,
       allowNull: false,
-      autoIncrement: true,
     },
 
     chat_id: {
@@ -43,8 +42,8 @@ Logs.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "logs",
+    modelName: "log",
   }
 );
 
-module.exports = Logs;
+module.exports = Log;

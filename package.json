@@ -4,30 +4,30 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no tests\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/index.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git@work.github.com:coding-boot-camp/module-13-challenge-orm.git"
+    "type": "git"    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  },
+  "url": "git+https://github.com/Crimsondrac1/ChatAppLive.git",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bulma": "^0.9.4",
+    "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",
-    "ejs": "^3.1.8",
     "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "sequelize": "^6.20.1",
-    "socket.io": "^4.5.1"
+    "socket.io": "^4.5.1",
+    "nodemon": "^2.0.16"
   }
 }

@@ -1,0 +1,48 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatAppLive</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/doug.css" />
+  </head>
+
+<body>
+  <div class="wrapper">
+    <header class="column ml-6 mr-6">
+      <h1 class=" color-one mb-3 box">
+        <a href="/" class="title column">ChatAppLive - 🟢</a>
+      </h1>
+      <nav>
+          {{#if loggedIn}}
+            <button id="log-out" class="btn-no-style nav-link">Logout</button>
+          {{else}}
+            <a href="/login" class="btn-no-style nav-link">Login</a>
+          {{/if}}
+        </nav>
+    </header>
+    <main>
+
+      {{{body}}}
+
+    </main>
+    <footer class="color-one ml-6 mr-6 box ">
+      <div class="columns is-vcentered">
+        <div class="column is-6 has-text-centered p-5">
+          Thanks for visiting!
+        </div>
+        <div class="column is-6 has-text-centered">
+          <button id="dark" class=" light-mode-button">Dark Mode</button>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="/js/logout.js"></script>
+  {{!-- <script src="/js/login.js"></script> --}}
+  {{!-- <script src="/js/signup.js"></script> --}}
+  <script src="/js/dark.js"></script>
+</body>
+
+</html>

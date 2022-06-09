@@ -1,4 +1,4 @@
-const { Logs } = require("../models");
+const { Log } = require("../models");
 
 const chatData = [
   {
@@ -20,7 +20,7 @@ const chatData = [
     user_id: 5,
   },
   {
-    pdialog: "Hiya :)",
+    dialog: "Hiya :)",
     sequence: 4,
     chat_id: 1,
     user_id: 4,
@@ -33,6 +33,6 @@ const chatData = [
   },
 ];
 
-const seedChat = () => Logs.bulkCreate(chatData);
+const seedChat = () => Log.bulkCreate(chatData);
 
 module.exports = seedChat;

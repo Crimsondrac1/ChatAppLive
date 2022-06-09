@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-    <link rel="stylesheet" href="../public/stylesheets/style.css">
-    <title>ChatAppLive</title>
-</head>
-
-<body class= "column ml-4 mr-4 mt-4">
+<body class="column ml-4 mr-4 mt-4">
     <!--div to create column to the left and right-->
     <div class="columns">
         <!--div to hosting the left column-->
@@ -18,34 +6,60 @@
             <!--left column hosting profile picture-->
             <section class="column">
                 <figure class="image">
-                    <img class="is-rounded" alt="profile picture" src="https://avatars.githubusercontent.com/u/9919?s=280&v=4">
+                    <img class="is-rounded" alt="profile picture"
+                        src="https://avatars.githubusercontent.com/u/9919?s=280&v=4">
                 </figure>
-            </section> 
+            </section>
+
+            <section class="container">
+                <p class="column m-2">user 1</p>
+                {{#each username}}
+                <p class="column m-2">{{this}}</p>
+                {{/each}}
+            </section>
         </div>
 
         <!--column nesting the chat name and messaging box-->
-        <main class="column ">
-            <div class="column color-one mb-3 box">
-                <h2 class="title">ChatAppLive - <span>Online</span></h2>
-            </div>
+        <main class="column">
             <!--Column nesting the text area-->
             <section class="column color-one box ">
                 <div class=" column subtitle">
                     <div class="columns">
-                        <div class="column columns-two has-background-grey">
-                            <p class="subtitle ">Placeholder for messages</p>
+                        <div class="columns-two ">
+                            <ul id="messages" class=" m-2 column"></ul>
                         </div>
                     </div>
+                    
+                    <div id="message-container" class="columns color-one ">
+                        <input id="textbox" class="input is-warning column is-11-mobile  mt-2 color-3" type="text"
+                            placeholder="Start typing...">
+                        <div class="column is-narrow"><button type="submit" id="button"
+                                class="button is-warning">Send</button>
+                        </div>
+                    </div>
+
                 </div>
 
             </section>
+
         </main>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-
 </body>
 
-</html>
+<script>
+const messages = document.getElementById("messages")
+const textbox = document.getElementById("textbox")
+const button = document.getElementById("button")
+
+
+ button.addEventListener("click", event => {
+    event.preventDefault();
+
+    const newMessage = document.createElement("li");
+    newMessage.innerHTML = textbox.value;
+    messages.appendChild(newMessage);
+    newMessage.classList.add("mt-4", "mb-4", "column", "is-three-fifths", "is-half-mobile")
+    console.log(newMessage);
+})
+
+</script>
