@@ -39,9 +39,10 @@ Doug Erickson, Christopher Kimball, Ambrose Shokunbi
 <blockquote>
 Please feel free to reach out for any questions about this application.
 
+[Doug](https://github.com/Crimsondrac1) 
 [Christopher](https://github.com/axdot) 
 [Ambrose](https://github.com/ashokunb) 
-[Doug](https://github.com/Crimsondrac1) 
+
 </blockquote>
 
 <br>

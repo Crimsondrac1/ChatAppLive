@@ -28,7 +28,6 @@ const sess = {
 };
 
 // Store users in an object
-let onlineUsers = {};
 const users = {};
 
 io.on('connection' , socket => {
