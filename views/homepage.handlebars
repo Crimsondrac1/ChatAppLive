@@ -9,10 +9,12 @@
                     <img class="is-rounded" alt="profile picture"
                         src="https://avatars.githubusercontent.com/u/9919?s=280&v=4">
                 </figure>
+
+
             </section>
 
-            <section class="container  has-text-black">
-                <p class="column m-2">user 1</p>
+            <section class="container users-online has-text-black">
+                
                 {{#each username}}
                 <p class="column m-2">{{this}}</p>
                 {{/each}}
@@ -25,15 +27,16 @@
             <section class="column color-one box ">
                 <div class=" column subtitle">
                     <div class="columns">
-                        <div class="columns-two ">
-                            <ul id="messages" class=" m-2 column  has-text-white"></ul>
+                        <div class="columns-two">
+                            <ul id="message-container" class=" m-2 column has-text-white"></ul>
                         </div>
                     </div>
                     
-                    <div id="message-container" class="columns color-one ">
-                        <input id="textbox" class="input is-warning column is-11-mobile  mt-2 color-3" type="text"
+                    <div class="columns color-one" id="send-container">
+                      <form id="send-container" class="column">
+                        <input id="message-input" class="input is-warning mt-2 color-3 message-in" type="text"
                             placeholder="Start typing...">
-                        <div class="column is-narrow"><button type="submit" id="button"
+                        <div class="is-narrow"><button type="submit" id="send-button"
                                 class="button is-warning">Send</button>
                         </div>
                     </div>
@@ -46,20 +49,3 @@
     </div>
 </body>
 
-<script>
-const messages = document.getElementById("messages")
-const textbox = document.getElementById("textbox")
-const button = document.getElementById("button")
-
-
- button.addEventListener("click", event => {
-    event.preventDefault();
-
-    const newMessage = document.createElement("li");
-    newMessage.innerHTML = textbox.value;
-    messages.appendChild(newMessage);
-    newMessage.classList.add("mt-4", "mb-4", "column", "is-three-fifths", "is-half-mobile")
-    console.log(newMessage);
-})
-
-</script>
