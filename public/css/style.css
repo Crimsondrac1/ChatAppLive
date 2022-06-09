@@ -5,18 +5,6 @@
   box-sizing:initial;
 }
 
-/* :root {
-  --white: #FFFFFF;
-  --brown1: #DFCEB9;
-  --brown3: #F9F5F1;
-  --brown2: #AD8350;
-  --brown4: #4a2900;
-  --grey1: #939393;
-  --blue1: #99E0FF;
-  --green1: #9DFFA1;
-  --black: #000000;
-} */
-
 :root {  
   --bg1: #AD8350;
   --bg2: #DFCEB9;
@@ -41,11 +29,10 @@
   --text2: #e8e8e8;
 }
 
-html {
-  background-color:var(--bg1);
+html{
+  background-color: var(--bg1);
 }
-body,
-html {
+body{
   background-color: var(--bg1);
   height: 100%;
   padding: 0;
@@ -56,7 +43,7 @@ html {
 }
 
 a:hover {
-  color: #3486eb;;
+  color: white;;
 }
 
 .pageTitle {
@@ -87,12 +74,12 @@ a:hover {
 
 .btn-no-style:hover {
   background: none;
-  color: var(--cont2);
+  color: var(--cont1);
 }
 
 .light-mode-button {
   cursor: pointer;
-  background-color: var(--bg2);
+  background-color: var(--bg1);
   color: var(--cont2);
   padding: 5px;
   /* font-size: 16px; */
@@ -131,14 +118,14 @@ main {
 
 
 .columns-two {
-  height: 70vh;
+  height: 65vh;
 }
 
 .color-one {
-  background-color: var(--bg1);
+  background-color: var(--bg2);
 }
 .color-3 {
-  background-color: var(--bg2);
+  background-color: var(--bg3);
 }
 
 form {
