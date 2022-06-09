@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3001')
+const socket = io('https://livechat-app-1.herokuapp.com')
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
