@@ -13,6 +13,7 @@
                         <input id="username-input" placeholder="Username"></input>
                         <button id="create-user-btn">Join Chat</button>
                     </form>
+
             </section>
 
             <section class="container users-online">
@@ -26,16 +27,16 @@
         <!--column nesting the chat name and messaging box-->
         <main class="column">
             <!--Column nesting the text area-->
-            <section class="column color-one box ">
-                <div class=" column subtitle">
-                    <div class="columns">
-                        <div class="columns-two ">
-                            <ul id="messages" class=" m-2 column"></ul>
+            <section  class="column color-one box">
+                <div  class=" column subtitle ">
+                    <div id="message=container" class="columns ">
+                        <ul id="messages" class=" m-2 column"></ul>
+                        <div  class="columns-two ">
                         </div>
                     </div>
                     
-                    <div id="message-container" class="columns color-one message-container">
-                        <input id="textbox" class="input is-warning column is-11-mobile  mt-2 color-3" type="text"
+                    <div  class="columns color-one">
+                        <input id="textbox chat-input" class="input is-warning column is-11-mobile  mt-2 color-3" type="text"
                             placeholder="Start typing...">
                         <div class="column is-narrow"><button type="submit" id="button send-chat-btn"
                                 class="button is-warning">Send</button>

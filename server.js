@@ -3,7 +3,6 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const moment = require('moment');
 // This is part of socket.io
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
@@ -17,9 +16,6 @@ let channels = {"General" : []};
 io.on("connection", (socket) => {
   console.log("🔌 New user connected! 🔌")
   
-  // This file will be read on new socket connections
-  
-
   socket.on('new user', (username) => {
     // Save the username as key to access the user's socket id
     onlineUsers[username] = socket.id;
