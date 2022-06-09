@@ -6,8 +6,4 @@ router.use("/", homeRoutes);
 
 router.use("/chat", chatRoutes);
 
-// router.use((req, res) => {
-//   res.send("Wrong Route!");
-// });
-
 module.exports = router;
