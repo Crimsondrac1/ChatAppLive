@@ -30,7 +30,8 @@ messageForm.addEventListener('submit', e=> {
 })
 
 function appendMessage(message){
-    const messageElement = document.createElement('div')
+    const messageElement = document.createElement('li')
     messageElement.innerText = message
+    messageElement.classList.add("mt-4", "mb-4", "column", "is-three-fifths", "is-half-mobile")
     messageContainer.append(messageElement)
 }
