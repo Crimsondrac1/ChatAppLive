@@ -1,13 +1,13 @@
 # ChatApp Live
 
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
-## Description:
+## Concepte:
 <blockquote>
 <p>The description is...</p>
 </blockquote>
 
 ## Table of Contents
-- [Description](#description)
+- [Concept](#concept)
 - [Instructions](#instructions)
 - [Contributions](#contributors)
 - [Images](#images)
