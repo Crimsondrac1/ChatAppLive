@@ -23,10 +23,14 @@ Wireframe concept:
 <img src="./assets/Images/1 Light mode.jpg" width="300" > <img src="./assets/Images/1 Dark mode.jpg" width="281" >
 
 Website:
-<img src="./assets/Images/1 Light mode.jpg" width="585" >
-<img src="./assets/Images/1 Light mode.jpg" width="585" >
 
+<img src="./assets/Images/2 Test 1.jpg" width="300" >
+<img src="./assets/Images//2 Test 2.jpg" width="300">
 
+Login/Signup:
+
+<img src="./assets/Images/3 Login 1.jpg" width="300" >
+<img src="./assets/Images/3 Login 2.jpg" width="300" >
 
 ## Contributors:
 
