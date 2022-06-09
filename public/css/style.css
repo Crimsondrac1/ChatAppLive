@@ -118,7 +118,7 @@ main {
 
 
 .columns-two {
-  height: 65vh;
+  height: 40vh;
 }
 
 .color-one {
@@ -185,3 +185,7 @@ p {
   width: 90%;
   margin-bottom: 5px;
 }
+
+/* .left-panel {
+  height: 70%;
+} */
