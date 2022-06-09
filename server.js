@@ -3,7 +3,6 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const PORT = process.env.PORT || 3001;
 const app = express();
-// This is part of socket.io
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
 const session = require("express-session");

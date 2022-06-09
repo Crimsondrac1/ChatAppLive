@@ -45,14 +45,6 @@ ready(() => {
     }
   });
 
-  // socket listeners
-  socket.on("new-user", (username) => {
-    console.log(`${username} has joined the chat`);
-    $(".users-online").append(
-      `<p class="user-online column m-2">${username}</p>`
-    );
-  });
-
   // Listen for new messages
   socket.on("new message", (data) => {
     // Send that data back to ALL clients
