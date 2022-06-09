@@ -46,8 +46,13 @@ ready(()=>{
   });
 
   // socket listeners
-  socket.on('new-user', (username) => {
-    console.log(`${username} has joined the chat`);
+  // socket.on('new-user', (username) => {
+  //   console.log(`${username} has joined the chat`);
+  //   $('.users-online').append(`<p class="user-online column m-2">${username}</p>`);
+  // })
+  // Doug TEST
+  socket.on('new-user', (name) => {
+    console.log(`${name} has joined the chat`);
     $('.users-online').append(`<p class="user-online column m-2">${username}</p>`);
   })
   // Listen for new messages

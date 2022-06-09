@@ -1,5 +1,5 @@
 // const socket = io('https://livechat-app-1.herokuapp.com')
-const socket = io(process.env.DB_URL || 'http://localhost:3001')
+const socket = io('http://localhost:3001')
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
@@ -7,6 +7,7 @@ const messageInput = document.getElementById('message-input')
 const name = prompt('what is your name?')
 appendMessage(`${name} joined`)
 socket.emit('new-user', name)
+$('.users-online').append(`<p class="user-online column m-2">${name}</p>`);
 
 socket.on('chat-message', data => {
     appendMessage(`${data.name}: ${data.message}`)
